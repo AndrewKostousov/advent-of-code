@@ -1,6 +1,6 @@
 paper = 0
 ribbon = 0
-lines = open('02.input').read().splitlines()
+lines = open('02.in').read().splitlines()
 for line in lines:
     dimensions = [int(d) for d in line.split('x')]
     dimensions.sort()
