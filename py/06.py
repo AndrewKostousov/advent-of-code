@@ -5,20 +5,16 @@ field = [[0 for x in range(1000)] for x in range(1000)]
 
 def switch(instruction, x, y):
     if instruction == 'toggle':
-        if field[x][y] == 0:
-            field[x][y] = 1
-            return 1
-        else:
-            field[x][y] = 0
-            return -1
+        field[x][y] += 2
+        return 2
     elif instruction == 'on':
-        result = int(field[x][y] == 0)
-        field[x][y] = 1
-        return result
+        field[x][y] += 1
+        return 1
     elif instruction == 'off':
-        result = int(field[x][y] == 1) * -1
-        field[x][y] = 0
-        return result
+        if field[x][y] == 0:
+            return 0
+        field[x][y] -= 1
+        return -1
 
 
 def lit(instruction):
