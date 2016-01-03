@@ -55,4 +55,8 @@ for line in open('07.in').read().splitlines():
         circuit[target] = ('copy', expr[0])
     else:
         assert False, 'invalid instruction: ' + line
+a = eval_signal_for('a')
+print a
+circuit_evaluated.clear()
+circuit_evaluated['b'] = a
 print eval_signal_for('a')
